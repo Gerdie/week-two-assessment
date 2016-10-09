@@ -126,29 +126,23 @@ class Quiz(Exam):
     """Pass if at least 50 percent correct"""
 
     def administer(self):
-        return super(Quiz, self).administer >= .5
+        score = super(Quiz, self).administer()
+        return score >= .5
 
 
 def take_test(exam, student):
     """Assigns test to student; records student's score"""
 
-    score = exam.administer()
-
-    student.score = score
+    student.score = exam.administer()
 
 
 def example():
     """Creates exam, Adds questions to exam, Creates student, Administers test"""
 
     exam = Exam("Example exam")
-    print exam
-
     exam.add_question("1 + 1 = ", "2")
-    print exam.questions
     exam.add_question("1 x 1 = ", "1")
-    print exam.questions[0].question
 
     student = Student("Maria", "Moy", "1600 Pennsylvania Ave")
-    print student
+
     take_test(exam, student)
-    print student.score

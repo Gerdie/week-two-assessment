@@ -4,9 +4,9 @@ Part 1: Discussion
 1. What are the three main design advantages that object orientation
    can provide? Explain each concept.
 
-   >> Abstraction: You don't have to know how the code works in order to use it. 
+   >> Abstraction: You don't have to know how the code works in order to use it.
    As an example, we were able to draw a picture using the oo-drawing module without
-   knowing how their Circle, Point or Polygon classes were constructed.
+   knowing (or caring) how their Circle, Point or Polygon classes were constructed.
 
    >> Encapsulation: All the code relating to a certain "thing" is stored within that
    thing. If we constructed a Cat() class, all our Cat attributes and methods would be
@@ -14,20 +14,21 @@ Part 1: Discussion
    and libraries to find all the scattered codebits that relate to the object we're
    working with.
 
-   >> Polymorphism: Components are interchangeable. We can access methods and attributes
-   in a standardized, predictable way across different instances of a class (and
-   that class's children, parents, relatives).
+   >> Polymorphism: Components are interchangeable. As it pertains to classes:
+   We can access methods and attributes in a standardized, predictable way across
+   different instances of a class (and that class's children, parents, relatives).
 
 
 2. What is a class?
 
-    >> A class is a datatype that contains specialized variables (attributes) and
-    functions (methods) for its own particular use.
+    >> A class is a blueprint for making objects. It contains specialized variables
+    (attributes) and functions (methods) for instances of that class to utilize.
 
 3. What is an instance attribute?
 
     >> An instance attribute is an attribute that is unique to that instance. Many
-    are set in the __init__ function as parameters.
+    are set in the __init__ function as parameters. Common ones are "name" or "age",
+    as those variables differ from individual to indicidual.
 
 4. What is a method?
 
@@ -37,16 +38,20 @@ Part 1: Discussion
 
 5. What is an instance in object orientation?
 
->> An instance is an object of a class.
+    >> An instance is an object of a class. If the class was Person(), we could
+    make an instance with the following line: nelson_mandela = Person() or
+    nelson_mandela = Person("Nelson", "Mandela"). Nelson Mandela is a Person,
+    but not all Persons are Nelson Mandela.
 
 6. How is a class attribute different than an instance attribute?
    Give an example of when you might use each.
 
->> A class attribute is (unless otherwise specified) shared by all members of that
-class. An instance attribute is unique to that instance. If we were working with a
-HackbrightStudents class, coolness = True might be a class attribute
-and name might be an instance attribute, because all hackbright students are cool
-and all hackbright students (in Ada at least) have differently spelled names.
+    >> A class attribute is (unless otherwise specified) shared by all members of that
+    class. An instance attribute is unique to that instance. If we were working with a
+    HackbrightStudents class, coolness = True might be a class attribute
+    and name might be an instance attribute, because all hackbright students are cool
+    but all hackbright students have unique names. However, both are called in the
+    same way, like: instance_name.attribute
 
 
 """

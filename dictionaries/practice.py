@@ -120,10 +120,10 @@ def top_chars(phrase):
 
     """
 
-    char_dict = {}  #  note to self -- current solution works but accounts for spaces...... and doesn't sort
+    char_dict = {}  
 
     for char in phrase:
-        if char != " ":
+        if char != " ":   # not counting spaces, so I can pass the doctests
             char_dict[char] = char_dict.get(char, 0) + 1
 
     return [n for n in sorted(char_dict.keys()) if char_dict[n] == sorted(char_dict.values())[-1]]

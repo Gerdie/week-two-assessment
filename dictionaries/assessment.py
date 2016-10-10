@@ -5,6 +5,9 @@ dictionaries and sets.
 """
 
 
+from collections import Counter
+
+
 def count_words(phrase):
     """Count unique words in a string.
 
@@ -30,14 +33,22 @@ def count_words(phrase):
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
     """
 
+    # FIRST WAY:
+
+    # phrase = phrase.rstrip().split()
+
+    # word_dict = {}
+
+    # for word in phrase:
+    #     word_dict[word] = word_dict.get(word, 0) + 1
+
+    # return word_dict
+
+    # SECOND WAY - using collections library:
+
     phrase = phrase.rstrip().split()
 
-    word_dict = {}
-
-    for word in phrase:
-        word_dict[word] = word_dict.get(word, 0) + 1
-
-    return word_dict
+    return Counter(phrase)
 
 
 def get_melon_price(melon_name):

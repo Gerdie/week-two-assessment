@@ -92,7 +92,7 @@ def get_sum_zero_pairs(numbers):
         [[-1, 1], [0, 0]]
     """
 
-    return [[num, -num] for num in set(numbers) if -num in set(numbers) and num >= 0]
+    return [[-num, num] for num in set(numbers) if -num in numbers and num >= 0]
 
 
 def top_chars(phrase):
